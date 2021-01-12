@@ -19,7 +19,7 @@ employeeCntrl.getEmployee = async (req, res) =>{
 employeeCntrl.createEmployee = async (req, res) =>{
     const newEmployee = new Employee(req.body);
     await newEmployee.save()
-            .then(employee => res.json(employee))
+            .then(employee => res.send({'message': "Employee created"}))
             .catch(err => console.log(err));
 }
 
